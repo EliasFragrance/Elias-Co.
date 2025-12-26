@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Elias & Co.</title>
+  <meta name="description" content="Start a project with Elias & Co. Request a quote or book a call." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="contact">
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="brand-mark"></span><span><span class="brand-name">Elias &amp; Co.</span><span class="brand-sub">Marketing &amp; Content Studio</span></span></a>
+    <nav class="nav-links">
+      <a href="index.html" data-nav="home">Home</a><a href="about.html" data-nav="about">About</a><a href="services.html" data-nav="services">Services</a><a href="work.html" data-nav="work">Work</a><a href="process.html" data-nav="process">Process</a><a href="pricing.html" data-nav="pricing">Pricing</a><a href="insights.html" data-nav="insights">Insights</a><a href="contact.html" data-nav="contact">Contact</a>
+    </nav>
+    <div class="nav-cta"><a class="btn btn-ghost" href="pricing.html">Pricing</a><a class="btn" href="services.html">Services</a></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="container" data-reveal>
+      <div class="kicker">Contact</div>
+      <h1>Let’s see if we’re a fit.</h1>
+      <p class="lede">Send a short brief. We’ll respond with next steps and a clean scope.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card" data-reveal>
+        <div class="pad">
+          <h2>Project inquiry</h2>
+          <p class="note">This form is front-end only. For real submissions, connect Formspree / Netlify Forms or your backend.</p>
+          <div class="hr"></div>
+
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" placeholder="you@company.com" />
+              </div>
+            </div>
+
+            <div class="form-row mt-12">
+              <div>
+                <label for="company">Company</label>
+                <input id="company" name="company" placeholder="Company name" />
+              </div>
+              <div>
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget">
+                  <option value="">Select</option>
+                  <option>$1k–$3k</option>
+                  <option>$3k–$7k</option>
+                  <option>$7k–$15k</option>
+                  <option>$15k+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-12">
+              <label for="message">What are you trying to achieve?</label>
+              <textarea id="message" name="message" placeholder="Goals, deadlines, what you sell, what’s working/not working..."></textarea>
+            </div>
+
+            <div class="hero-actions mt-16">
+              <button class="btn" type="button" onclick="mailtoDraft()">Create email draft</button>
+              <a class="btn btn-ghost" href="pricing.html">View engagement models</a>
+            </div>
+
+            <p class="note mt-12">Tip: Replace the email below with yours in the script.</p>
+          </form>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <div class="card-soft">
+          <div class="pad">
+            <div class="kicker">Direct</div>
+            <h3>Email</h3>
+            <p class="note">hello@eliasandco.ca (replace)</p>
+            <div class="hr"></div>
+            <h3>Response time</h3>
+            <p class="note">Typically within 24–48 hours.</p>
+          </div>
+        </div>
+
+        <div class="card-soft mt-16">
+          <div class="pad">
+            <h3>What to include</h3>
+            <ul class="list mt-12">
+              <li class="li"><span class="dot"></span><div><b>Your offer</b><p>What you sell, who buys it.</p></div></li>
+              <li class="li"><span class="dot"></span><div><b>Your goal</b><p>Leads, revenue, brand level, hiring.</p></div></li>
+              <li class="li"><span class="dot"></span><div><b>Timeline</b><p>Any deadlines or launch windows.</p></div></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><div class="brand-name">Elias &amp; Co.</div><p class="note mt-12">Modern marketing built with restraint.</p><p class="note">© <span id="year"></span> Elias &amp; Co. All rights reserved.</p></div>
+    <div><div class="kicker">Site</div><p><a href="services.html">Services</a></p><p><a href="work.html">Work</a></p><p><a href="insights.html">Insights</a></p></div>
+    <div><div class="kicker">Contact</div><p><a href="contact.html">Project inquiry</a></p><p class="note">hello@eliasandco.ca (replace)</p></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function mailtoDraft(){
+    const to = "hello@eliasandco.ca"; // replace
+    const name = document.getElementById("name").value || "";
+    const email = document.getElementById("email").value || "";
+    const company = document.getElementById("company").value || "";
+    const budget = document.getElementById("budget").value || "";
+    const message = document.getElementById("message").value || "";
+
+    const subject = encodeURIComponent("Project Inquiry — Elias & Co.");
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nBudget: ${budget}\n\nGoals:\n${message}\n`
+    );
+
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  }
+</script>
+</body>
+</html>
