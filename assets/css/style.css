@@ -1,4 +1,5 @@
 /* Elias & Co — Modern Marketing Site (Black/Charcoal/Off-white) */
+body{ outline: 6px solid red !important; }
 
 :root{
   --bg: #0b0c0f;          /* black */
