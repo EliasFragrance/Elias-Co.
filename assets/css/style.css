@@ -90,7 +90,7 @@ h3{font-size:var(--h3);line-height:1.25;font-weight:650}
 
   /* logo image layer on top */
   background-image:
-    url("/assets/img/ec-mark.png"),
+    url("/assets/img/logo.png"),
     radial-gradient(10px 10px at 30% 30%, rgba(31,31,31,.10), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.65), rgba(0,0,0,.03));
 
