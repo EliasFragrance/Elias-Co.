@@ -1,27 +1,18 @@
-// Elias & Co — basic site JS: active nav + reveal on scroll
-
 (function () {
-  // Active nav
-  const page = document.body.getAttribute("data-page");
-  if (page) {
-    document.querySelectorAll(".nav-links a").forEach(a => {
-      const key = a.getAttribute("data-nav");
-      if (key === page) a.classList.add("active");
+  const toggle = document.querySelector('[data-mobile-toggle]');
+  const nav = document.querySelector('[data-navlinks]');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
     });
   }
 
-  // Reveal on scroll
-  const els = Array.from(document.querySelectorAll("[data-reveal]"));
-  if (!els.length) return;
-
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add("is-visible");
-        io.unobserve(e.target);
-      }
-    }
-  }, { threshold: 0.12 });
-
-  els.forEach(el => io.observe(el));
+  // Set current nav link automatically
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('a[data-nav]').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (href === path) a.setAttribute('aria-current', 'page');
+  });
 })();

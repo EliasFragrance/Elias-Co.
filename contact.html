@@ -4,136 +4,148 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — Elias & Co.</title>
-  <meta name="description" content="Start a project with Elias & Co. Request a quote or book a call." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="description" content="Book a call or message Elias & Co." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/main.js"></script>
 </head>
-<body data-page="contact">
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html"><span class="brand-mark"></span><span><span class="brand-name">Elias &amp; Co.</span><span class="brand-sub">Marketing &amp; Content Studio</span></span></a>
-    <nav class="nav-links">
-      <a href="index.html" data-nav="home">Home</a><a href="about.html" data-nav="about">About</a><a href="services.html" data-nav="services">Services</a><a href="work.html" data-nav="work">Work</a><a href="process.html" data-nav="process">Process</a><a href="pricing.html" data-nav="pricing">Pricing</a><a href="insights.html" data-nav="insights">Insights</a><a href="contact.html" data-nav="contact">Contact</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <div class="mark" aria-hidden="true"><span>E&Co</span></div>
+        <div class="name">
+          <strong>Elias &amp; Co.</strong>
+          <small>Marketing that looks premium &amp; performs.</small>
+        </div>
+      </a>
+
+      <div class="navlinks" data-navlinks>
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="work.html">Work</a>
+        <a data-nav href="pricing.html">Pricing</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="faq.html">FAQ</a>
+        <a data-nav href="contact.html">Contact</a>
+      </div>
+
+      <div class="actions">
+        <button class="btn mobile-toggle" data-mobile-toggle aria-expanded="false" aria-label="Open menu">Menu</button>
+        <a class="btn primary" href="#book">Book a Call</a>
+      </div>
     </nav>
-    <div class="nav-cta"><a class="btn btn-ghost" href="pricing.html">Pricing</a><a class="btn" href="services.html">Services</a></div>
   </div>
 </header>
 
-<main>
-  <section class="page-head">
-    <div class="container" data-reveal>
-      <div class="kicker">Contact</div>
-      <h1>Let’s see if we’re a fit.</h1>
-      <p class="lede">Send a short brief. We’ll respond with next steps and a clean scope.</p>
+<main id="main">
+  <section class="hero">
+    <div class="container">
+      <div class="card pad">
+        <div class="eyebrow">
+          <span class="pill">Contact</span>
+          <span class="pill">Fast response</span>
+        </div>
+        <h1>Let’s build your growth system.</h1>
+        <p>
+          Best option: book a call. If you prefer, send a message and we’ll reply ASAP.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card" data-reveal>
-        <div class="pad">
-          <h2>Project inquiry</h2>
-          <p class="note">This form is front-end only. For real submissions, connect Formspree / Netlify Forms or your backend.</p>
-          <div class="hr"></div>
+  <section class="section" id="book">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card pad">
+          <h2>Book a call</h2>
+          <p>Replace the embed below with your Calendly link.</p>
 
-          <form onsubmit="return false;">
-            <div class="form-row">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" placeholder="Your name" />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" placeholder="you@company.com" />
-              </div>
+          <!-- Calendly embed placeholder -->
+          <div class="feature">
+            <p style="margin:0;">
+              ✅ Paste your Calendly embed code here.<br />
+              If you don’t have it yet, use a button link for now.
+            </p>
+            <div style="height:12px"></div>
+            <a class="btn dark" href="#" onclick="alert('Replace this link with your Calendly URL.'); return false;">Open Calendly</a>
+          </div>
+
+          <div style="height:12px"></div>
+          <p class="notice">
+            Tip: make your Calendly questions include budget, timeline, and goal so you pre-qualify.
+          </p>
+        </div>
+
+        <div class="card pad">
+          <h2>Send a message</h2>
+          <p>Works on static sites. This uses <strong>mailto</strong> (opens their email app).</p>
+
+          <form class="form" onsubmit="return sendMail(event)">
+            <div class="input">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="input">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@email.com" required />
+            </div>
+            <div class="input">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what you do and what you want to improve…" required></textarea>
             </div>
 
-            <div class="form-row mt-12">
-              <div>
-                <label for="company">Company</label>
-                <input id="company" name="company" placeholder="Company name" />
-              </div>
-              <div>
-                <label for="budget">Budget range</label>
-                <select id="budget" name="budget">
-                  <option value="">Select</option>
-                  <option>$1k–$3k</option>
-                  <option>$3k–$7k</option>
-                  <option>$7k–$15k</option>
-                  <option>$15k+</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="mt-12">
-              <label for="message">What are you trying to achieve?</label>
-              <textarea id="message" name="message" placeholder="Goals, deadlines, what you sell, what’s working/not working..."></textarea>
-            </div>
-
-            <div class="hero-actions mt-16">
-              <button class="btn" type="button" onclick="mailtoDraft()">Create email draft</button>
-              <a class="btn btn-ghost" href="pricing.html">View engagement models</a>
-            </div>
-
-            <p class="note mt-12">Tip: Replace the email below with yours in the script.</p>
+            <button class="btn dark" type="submit">Send</button>
+            <p class="notice">Replace the email in the script below with your business email.</p>
           </form>
         </div>
       </div>
 
-      <div data-reveal>
-        <div class="card-soft">
-          <div class="pad">
-            <div class="kicker">Direct</div>
-            <h3>Email</h3>
-            <p class="note">hello@eliasandco.ca (replace)</p>
-            <div class="hr"></div>
-            <h3>Response time</h3>
-            <p class="note">Typically within 24–48 hours.</p>
-          </div>
-        </div>
+      <div style="height:18px"></div>
 
-        <div class="card-soft mt-16">
-          <div class="pad">
-            <h3>What to include</h3>
-            <ul class="list mt-12">
-              <li class="li"><span class="dot"></span><div><b>Your offer</b><p>What you sell, who buys it.</p></div></li>
-              <li class="li"><span class="dot"></span><div><b>Your goal</b><p>Leads, revenue, brand level, hiring.</p></div></li>
-              <li class="li"><span class="dot"></span><div><b>Timeline</b><p>Any deadlines or launch windows.</p></div></li>
-            </ul>
-          </div>
-        </div>
-
+      <div class="card pad">
+        <h2>Direct contact</h2>
+        <p>
+          Email: <a href="mailto:hello@eliasandco.com"><strong>hello@eliasandco.com</strong></a> (replace) <br />
+          Instagram: <a href="#"><strong>@eliasandco</strong></a> (replace)
+        </p>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div><div class="brand-name">Elias &amp; Co.</div><p class="note mt-12">Modern marketing built with restraint.</p><p class="note">© <span id="year"></span> Elias &amp; Co. All rights reserved.</p></div>
-    <div><div class="kicker">Site</div><p><a href="services.html">Services</a></p><p><a href="work.html">Work</a></p><p><a href="insights.html">Insights</a></p></div>
-    <div><div class="kicker">Contact</div><p><a href="contact.html">Project inquiry</a></p><p class="note">hello@eliasandco.ca (replace)</p></div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><small>© <span id="y"></span> Elias &amp; Co.</small></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;">
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
   </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+
+      // CHANGE THIS to your real email:
+      const to = "hello@eliasandco.com";
+
+      const subject = encodeURIComponent(`New inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
 </footer>
 
-<script src="assets/js/main.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  function mailtoDraft(){
-    const to = "hello@eliasandco.ca"; // replace
-    const name = document.getElementById("name").value || "";
-    const email = document.getElementById("email").value || "";
-    const company = document.getElementById("company").value || "";
-    const budget = document.getElementById("budget").value || "";
-    const message = document.getElementById("message").value || "";
-
-    const subject = encodeURIComponent("Project Inquiry — Elias & Co.");
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nBudget: ${budget}\n\nGoals:\n${message}\n`
-    );
-
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-  }
-</script>
 </body>
 </html>
