@@ -1,5 +1,7 @@
 /* Elias & Co. — Off-White/Charcoal/Cream */
 
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
 :root{
   --bg: #FAFAF9;
   --surface: rgba(255,255,255,0.85);
@@ -12,12 +14,13 @@
   --charcoal-dark: #2B3539;
   --cream: #FFFEF5;
   --cream-2: rgba(255,254,245,0.75);
+  --header-bg: #fff7ed;
   --radius: 20px;
   --max: 1200px;
   --pad: 24px;
 
   --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Garamond, Georgia, serif;
-  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sans: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *{ box-sizing: border-box; }
@@ -70,7 +73,7 @@ a:hover{ opacity: .9; }
   top:0;
   z-index: 100;
   backdrop-filter: blur(16px);
-  background: rgba(250,250,249,0.85);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -643,7 +646,7 @@ textarea{ min-height: 140px; resize: vertical; }
     left: var(--pad);
     right: var(--pad);
     top: 70px;
-    background: rgba(250,250,249,0.95);
+    background: var(--header-bg);
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 10px;
