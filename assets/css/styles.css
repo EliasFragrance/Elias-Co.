@@ -88,34 +88,26 @@ a:hover{ opacity: .9; }
 .brand{
   display:flex;
   align-items:center;
-  gap: 12px;
+  gap:12px;
 }
 .mark img{
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
+  width:24px;
+  height:24px;
+  object-fit:contain;
+  display:block;
 }
 .brand .name{
   display:flex;
-  flex-direction: column;
-  line-height: 1.05;
+  align-items:center;
+  gap:8px;
+  font-size:20px;     /* 28px is too big for a header */
+  font-weight:600;
+  line-height:1;
 }
-.brand .name strong{
-  font-family: var(--sans);
-  letter-spacing: .3px;
-  font-size: 16px;
-}
-.brand .name small{
-  color: var(--muted);
-  font-size: 12px;
-}
-.name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 28px;
-  font-weight: 600;
+.brand .name .amp-icon{
+  height:0.9em;
+  width:auto;
+  display:block;
 }
 
 .navlinks{
