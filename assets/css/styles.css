@@ -14,7 +14,7 @@
   --charcoal-dark: #2B3539;
   --cream: #FFFEF5;
   --cream-2: rgba(255,254,245,0.75);
-  --header-bg: #fff7ed;
+  --header-bg: #643700;
   --radius: 20px;
   --max: 1200px;
   --pad: 24px;
@@ -128,7 +128,7 @@ a:hover{ opacity: .9; }
 }
 .navlinks a{
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
   padding: 8px 12px;
   border-radius: 10px;
   transition: all 0.2s ease;
