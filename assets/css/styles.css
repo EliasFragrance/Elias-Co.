@@ -133,6 +133,9 @@ a:hover{ opacity: .9; }
   border-radius: 10px;
   transition: all 0.2s ease;
 }
+.navlinks .nav-cta{
+  display: none;
+}
 .navlinks a:hover{
   color: var(--text);
   background: var(--cream-2);
@@ -640,6 +643,7 @@ textarea{ min-height: 140px; resize: vertical; }
   }
   .navlinks{ display:none; }
   .mobile-toggle{ display:inline-flex; }
+  .actions .btn.primary{ display:none; }
   .navlinks.open{
     display:flex;
     position:absolute;
@@ -657,6 +661,12 @@ textarea{ min-height: 140px; resize: vertical; }
     backdrop-filter: blur(16px);
   }
   .navlinks.open a{ padding: 10px 12px; }
+  .navlinks.open .nav-cta{
+    display:inline-flex;
+    justify-content:center;
+    width: 100%;
+    padding: 12px 16px;
+  }
 }
 
 @media (max-width: 640px){
