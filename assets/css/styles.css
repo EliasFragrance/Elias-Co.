@@ -110,6 +110,13 @@ a:hover{ opacity: .9; }
   color: var(--muted);
   font-size: 12px;
 }
+.name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
 
 .navlinks{
   display:flex;
@@ -648,14 +655,6 @@ textarea{ min-height: 140px; resize: vertical; }
     backdrop-filter: blur(16px);
   }
   .navlinks.open a{ padding: 10px 12px; }
-}
-.name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 28px;
-  font-weight: 600;
-}
 
 .amp-icon {
   height: 0.9em;
