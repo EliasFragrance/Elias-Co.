@@ -94,12 +94,12 @@ a:hover{ opacity: .9; }
   display:flex;
   align-items:center;
   gap:8px;
-  font-size:30px;
+  font-size:25px;
   font-weight:600;
   line-height:1;
 }
 .amp-icon{
-  height:50px;
+  height:45px;
   width:auto;
   display:block;
 }
