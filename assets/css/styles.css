@@ -519,12 +519,12 @@ p{
 }
 .footer-links{
   display:flex;
-  gap: 14px;
+  gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
 }
 .footer-links a{
-  font-size: 18px;
+  font-size: 14px;
 }
 .footer-left small{
   display: block;
