@@ -665,6 +665,9 @@ textarea{ min-height: 140px; resize: vertical; }
   }
   .section{
     padding: 60px 0;
+    background: var(--bg);
+}
+
   }
   .section-alt{
     padding: 60px 0;
