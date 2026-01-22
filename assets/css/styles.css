@@ -106,7 +106,7 @@ a:hover{ opacity: .9; }
 .navlinks{
   display:flex;
   align-items:center;
-  gap: 28px;
+  gap: 38px;
   flex-wrap: wrap;
 }
 .navlinks a{
