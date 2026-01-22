@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap");
 
 :root{
-  --bg: #FAFAF9;
+  --bg: #FFFFF;
   --surface: rgba(255,255,255,0.85);
   --text: #2C2C2C;
   --muted: rgba(44,44,44,0.65);
