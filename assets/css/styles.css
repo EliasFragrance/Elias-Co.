@@ -521,6 +521,7 @@ p{
   display:flex;
   gap: 22px;
   flex-wrap: wrap;
+  letter-spacing: -0.2px;
   justify-content: center;
 }
 .footer-links a{
