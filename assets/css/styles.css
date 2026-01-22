@@ -523,6 +523,7 @@ p{
   flex-wrap: wrap;
   letter-spacing: -0.2px;
   justify-content: center;
+  word-spacing: -0.15em
 }
 .footer-links a{
   font-size: 14px;
