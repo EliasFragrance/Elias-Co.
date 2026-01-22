@@ -541,7 +541,11 @@ p{
   justify-content: center;
 }
 .footer-links a{
-  font-size: 17px;
+  font-size: 18px;
+}
+.footer-left small{
+  display: block;
+  font-size: 12px;
 }
 .footer-socials{
   display:flex;
