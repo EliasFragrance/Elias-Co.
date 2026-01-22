@@ -553,7 +553,7 @@ p{
   width: 22px;
   height: 22px;
 }
-.footer small, .footer a{ color: var(--muted); font-size: 13px; }
+.footer small, .footer a{ color: var(--muted); font-size: 10px; }
 
 .table{
   width:100%;
