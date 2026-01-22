@@ -182,9 +182,28 @@ a:hover{ opacity: .9; }
   background: var(--charcoal);
   color: var(--cream);
 }
+.btn.contact-cta{
+  border-color: rgba(54,69,79,0.85);
+  background: linear-gradient(135deg, #2f3940 0%, #3a4650 60%, #2b3539 100%);
+  box-shadow: 0 12px 26px rgba(54,69,79,0.22);
+  letter-spacing: 0.2px;
+  position: relative;
+}
+.btn.contact-cta::after{
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 11px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
+  pointer-events: none;
+}
 .btn.primary:hover{
   background: var(--charcoal-dark);
   box-shadow: 0 10px 30px rgba(54,69,79,0.25);
+}
+.btn.contact-cta:hover{
+  background: linear-gradient(135deg, #2b3539 0%, #35424a 60%, #262f33 100%);
+  box-shadow: 0 16px 32px rgba(54,69,79,0.26);
 }
 .btn.outline{
   border: 1.5px solid rgba(54,69,79,0.3);
