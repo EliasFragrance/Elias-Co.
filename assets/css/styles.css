@@ -118,6 +118,7 @@ a:hover{ opacity: .9; }
 }
 .navlinks .nav-cta{
   display: none;
+  color: #2C2C2C;
 }
 .navlinks a:hover{
   color: var(--text);
