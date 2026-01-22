@@ -554,10 +554,10 @@ p{
   border-color: var(--charcoal-light);
 }
 .social-link svg{
-  width: 22px;
-  height: 22px;
+  width: 42px;
+  height: 42px;
 }
-.footer small, .footer a{ color: var(--muted); font-size: 13px; }
+.footer small, .footer a{ color: var(--muted); font-size: 24px; }
 
 .table{
   width:100%;
