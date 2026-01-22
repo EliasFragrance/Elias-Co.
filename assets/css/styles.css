@@ -519,7 +519,7 @@ p{
 }
 .footer-links{
   display:flex;
-  gap: 6px;
+  gap: 22px;
   flex-wrap: wrap;
   justify-content: center;
 }
