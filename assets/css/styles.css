@@ -519,7 +519,7 @@ p{
 }
 .footer-links{
   display:flex;
-  gap: 22px;
+  gap: 28px;
   flex-wrap: wrap;
   letter-spacing: -0.2px;
   justify-content: center;
