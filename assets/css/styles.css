@@ -262,7 +262,7 @@ a:hover{ opacity: .9; }
   display:grid;
   grid-template-columns: 1.25fr .75fr;
   gap: 32px;
-  align-items: start;
+  align-items: stretch;
 }
 .card{
   border: 1px solid var(--border);
@@ -271,7 +271,7 @@ a:hover{ opacity: .9; }
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 }
-.card.pad{ padding: 2px; }
+.card.pad{ padding: 26px; }
 .eyebrow{
   display:inline-flex;
   align-items:center;
