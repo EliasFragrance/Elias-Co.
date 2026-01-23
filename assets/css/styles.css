@@ -271,7 +271,7 @@ a:hover{ opacity: .9; }
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 }
-.card.pad{ padding: 26px; }
+.card.pad{ padding: 2px; }
 .eyebrow{
   display:inline-flex;
   align-items:center;
