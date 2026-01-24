@@ -340,6 +340,10 @@ p{
   margin-right: auto;
 }
 
+.contact-hero-title{
+  color: #ffffff;
+}
+
 .hero-actions{
   display:flex;
   gap: 16px;
@@ -450,6 +454,10 @@ p{
   margin: 0;
   font-size: 15px;
   line-height: 1.65;
+}
+
+.contact-details{
+  margin-top: 24px;
 }
 
 .hr{
