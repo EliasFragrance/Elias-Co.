@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Elias & Co.</title>
+  <title>Elias & Co. - Contact Us</title>
   <meta name="description" content="Book a call or message Elias & Co." />
   <link rel="icon" href="assets/img/favicon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png" />
@@ -80,26 +80,31 @@
           </p>
         </div>
 
-        <div class="card pad">
+               <div class="card pad">
           <h2>Send a message</h2>
-          <p>Works on static sites. This uses <strong>mailto</strong> (opens their email app).</p>
-
-          <form class="form" onsubmit="return sendMail(event)">
+          <p>Works on static sites. This uses <strong>Web3Forms</strong>.</p>
+        
+          <form class="form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="921c7df0-02c6-4cc0-a37b-4d573a63eb86">
+            <input type="hidden" name="subject" value="New message from Elias & Co site">
+            <input type="hidden" name="from_name" value="Elias & Co Website">
+        
             <div class="input">
               <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required />
+              <input id="name" name="name" placeholder="Your name" required>
             </div>
+        
             <div class="input">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              <input id="email" name="email" type="email" placeholder="you@email.com" required>
             </div>
+        
             <div class="input">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us what you do and what you want to improve…" required></textarea>
+              <textarea id="message" name="message" required></textarea>
             </div>
-
+        
             <button class="btn dark" type="submit">Send</button>
-            <p class="notice">Replace the email in the script below with your business email.</p>
           </form>
         </div>
       </div>
