@@ -184,17 +184,39 @@ a:hover{ opacity: .9; }
 }
 
 .hero{
-  padding: 120px 0 100px;
+  padding: 90px 0 60px;
   position: relative;
-  min-height: 85vh;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-.contact-page .hero{
-  padding: 90px 0 60px;
-  min-height: 65vh;
+.contact-hero{
+  min-height: 100vh;
+}
+
+.contact-hero-container{
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-bubble{
+  width: min(560px, 90vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  background: var(--cream);
+  border: 1px solid rgba(54,69,79,0.12);
+  box-shadow: 0 30px 80px rgba(54,69,79,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px;
+  transform: scale(1);
+  will-change: transform;
 }
 
 .hero::before {
@@ -346,7 +368,8 @@ p{
 }
 
 .contact-hero-title{
-  color: #ffffff;
+  color: var(--charcoal);
+  margin: 0;
 }
 
 .hero-actions{
@@ -394,10 +417,6 @@ p{
 }
 
 .section{
-  padding: 80px 0;
-}
-
-.contact-page .section{
   padding: 60px 0;
 }
 .section-alt{
