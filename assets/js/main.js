@@ -416,6 +416,14 @@
       });
     }
 
+    document.addEventListener('click', (event) => {
+      if (panel.hidden) return;
+      const target = event.target;
+      if (panel.contains(target)) return;
+      if (toggle.contains(target)) return;
+      setOpen(false);
+    });
+
     renderQuestion();
   });
 })();
