@@ -39,7 +39,7 @@ body{
   content: '';
   position: fixed;
   inset: 0;
-  background: url("https://github.com/EliasFragrance/Elias-Co./blob/main/assets/img/bg.png?raw=true") center / cover no-repeat;
+  background: url("https://github.com/EliasFragrance/Elias-Co./blob/main/assets/img/bg.avif?raw=true") center / cover no-repeat;
   pointer-events: none;
   z-index: 0;
 }
