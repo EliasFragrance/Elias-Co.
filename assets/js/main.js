@@ -24,6 +24,15 @@
     link.style.setProperty('--nav-steps', String(Math.max(text.length, 4)));
   });
 
+  const header = document.querySelector('.header');
+  if (header) {
+    const updateHeaderBackground = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    };
+    updateHeaderBackground();
+    window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+  }
+
 
   document.querySelectorAll('[data-ai-chat]').forEach(widget => {
     const toggle = widget.querySelector('.ai-chat-toggle');
