@@ -46,7 +46,9 @@
     <div class="hero-geometric" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
-        <h1>Your creative team's creative team.</h1>
+        <h1 aria-label="Your creative team's creative team.">
+          Your creative team<span class="typing" data-typing-target></span>
+        </h1>
         <p class="hero-description">
           We help startups and brands get more exposure through different social media channels.
         </p>
@@ -209,6 +211,26 @@
   </div>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const typingTarget = document.querySelector('[data-typing-target]');
+    if (!typingTarget) return;
+
+    const text = "'s creative team.";
+    let index = 0;
+    typingTarget.textContent = '';
+
+    const typeNext = () => {
+      if (index >= text.length) return;
+      typingTarget.textContent += text[index];
+      index += 1;
+      setTimeout(typeNext, 70);
+    };
+
+    typeNext();
+  });
+</script>
 
 <div class="ai-chat-widget" data-ai-chat>
   <button class="ai-chat-toggle" type="button" aria-expanded="false" aria-controls="ai-chat-panel">
