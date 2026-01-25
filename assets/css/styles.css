@@ -218,13 +218,13 @@ a:hover{ opacity: .9; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 18px 24px;
   border-radius: 999px;
-  border: 1px solid rgba(54,69,79,0.18);
-  background: linear-gradient(135deg, rgba(255,254,245,0.95), rgba(255,255,255,0.95));
-  color: var(--text);
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 16px;
   box-shadow: 0 16px 30px rgba(54,69,79,0.14);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -234,8 +234,8 @@ a:hover{ opacity: .9; }
   box-shadow: 0 20px 40px rgba(54,69,79,0.18);
 }
 .ai-chat-dot{
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
   background: #2ecc71;
   box-shadow: 0 0 0 3px rgba(46,204,113,0.2);
