@@ -199,6 +199,8 @@
       toggle.setAttribute('aria-expanded', String(isOpen));
     };
 
+    setOpen(false);
+
     const getVisibleQuestions = (answers) => (
       questions.filter(question => (question.condition ? question.condition(answers) : true))
     );
