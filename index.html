@@ -228,6 +228,7 @@
 
     let index = 0;
     let phase = 'typing-full';
+    let loopCount = 0;
 
     baseEl.textContent = '';
     suffixEl.textContent = '';
@@ -277,6 +278,8 @@
         const nextIndex = suffixEl.textContent.length + 1;
         suffixEl.textContent = suffixText.slice(0, nextIndex);
         if (nextIndex >= suffixText.length) {
+          loopCount += 1;
+          if (loopCount >= 2) return;
           phase = 'hold-full';
           setTimeout(updateText, holdAfterFull);
           return;
