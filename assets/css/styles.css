@@ -201,22 +201,7 @@ a:hover{ opacity: .9; }
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.contact-hero-bubble{
-  width: min(560px, 90vw);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  background: var(--cream);
-  border: 1px solid rgba(54,69,79,0.12);
-  box-shadow: 0 30px 80px rgba(54,69,79,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 48px;
-  transform: scale(1);
-  will-change: transform;
 }
 
 .hero::before {
