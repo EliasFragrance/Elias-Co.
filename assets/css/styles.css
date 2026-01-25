@@ -239,6 +239,13 @@ a:hover{ opacity: .9; }
   border-radius: 999px;
   background: #2ecc71;
   box-shadow: 0 0 0 3px rgba(46,204,113,0.2);
+  animation: ai-chat-pulse 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes ai-chat-pulse{
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 3px rgba(46,204,113,0.2); }
+  50% { transform: scale(1.35); box-shadow: 0 0 0 6px rgba(46,204,113,0.15); }
 }
 .ai-chat-panel{
   width: min(360px, 90vw);
