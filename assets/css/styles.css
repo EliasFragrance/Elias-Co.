@@ -192,6 +192,16 @@ a:hover{ opacity: .9; }
   overflow: hidden;
 }
 
+.typing-cursor{
+  display: inline-block;
+  margin-left: 2px;
+  animation: typing-cursor-blink 1s step-end infinite;
+}
+
+@keyframes typing-cursor-blink{
+  50%{ opacity: 0; }
+}
+
 .contact-hero{
   min-height: 100vh;
 }
