@@ -273,18 +273,9 @@
         <div class="ai-chat-actions">
           <a class="ai-chat-action" href="services.html">View pricing</a>
           <a class="ai-chat-action secondary" href="contact.html">Book a call</a>
-          <button class="ai-chat-action ghost" type="button" data-quiz-reset>Start over</button>
         </div>
       `;
-
-      const resetButton = body.querySelector('[data-quiz-reset]');
-      if (resetButton) {
-        resetButton.addEventListener('click', () => {
-          state.index = 0;
-          state.answers = {};
-          renderQuestion();
-        });
-      }
+      body.scrollTop = 0;
     };
 
     const renderQuestion = () => {
@@ -320,6 +311,7 @@
             <button class="ai-chat-action" type="button" data-quiz-next>Continue</button>
           </div>
         `;
+        body.scrollTop = 0;
 
         const selected = new Set(state.answers[question.id] || []);
         body.querySelectorAll('input[type="checkbox"]').forEach(input => {
@@ -367,6 +359,7 @@
           <button class="ai-chat-action secondary" type="button" data-quiz-back>Back</button>
         </div>
       `;
+      body.scrollTop = 0;
 
       const back = body.querySelector('[data-quiz-back]');
       if (back) {
@@ -395,14 +388,6 @@
         setOpen(false);
       });
     }
-
-    document.addEventListener('click', (event) => {
-      if (panel.hidden) return;
-      const target = event.target;
-      if (panel.contains(target)) return;
-      if (toggle.contains(target)) return;
-      setOpen(false);
-    });
 
     renderQuestion();
   });
