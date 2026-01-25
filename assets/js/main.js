@@ -161,6 +161,7 @@
 
     const setOpen = (isOpen) => {
       panel.hidden = !isOpen;
+      widget.classList.toggle('is-open', isOpen);
       toggle.hidden = isOpen;
       toggle.setAttribute('aria-expanded', String(isOpen));
     };
