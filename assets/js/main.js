@@ -40,6 +40,7 @@
     const close = widget.querySelector('.ai-chat-close');
     const body = widget.querySelector('.ai-chat-body');
     const header = widget.querySelector('.ai-chat-header');
+    const footer = document.querySelector('.footer');
 
     if (!toggle || !panel || !body || !header) return;
 
@@ -197,6 +198,14 @@
         progressFill.style.width = `${percent}%`;
       }
       progressWrap.setAttribute('aria-hidden', String(total === 0));
+    };
+
+    const updateChatbotOffset = () => {
+      if (!footer) return;
+      const footerRect = footer.getBoundingClientRect();
+      const overlap = Math.max(0, window.innerHeight - footerRect.top);
+      const baseOffset = 24;
+      widget.style.setProperty('--chatbot-bottom', `${baseOffset + overlap}px`);
     };
 
     const setOpen = (isOpen) => {
@@ -434,5 +443,18 @@
     });
 
     renderQuestion();
+
+    updateChatbotOffset();
+    let chatTicking = false;
+    const scheduleChatbotOffset = () => {
+      if (chatTicking) return;
+      chatTicking = true;
+      requestAnimationFrame(() => {
+        updateChatbotOffset();
+        chatTicking = false;
+      });
+    };
+    window.addEventListener('scroll', scheduleChatbotOffset, { passive: true });
+    window.addEventListener('resize', scheduleChatbotOffset);
   });
 })();
