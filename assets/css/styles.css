@@ -269,6 +269,9 @@ a:hover{ opacity: .9; }
   box-shadow: 0 22px 60px rgba(54,69,79,0.18);
   overflow: hidden;
   backdrop-filter: blur(14px);
+  display: none;
+}
+.ai-chat-widget.is-open .ai-chat-panel{
   display: flex;
   flex-direction: column;
 }
