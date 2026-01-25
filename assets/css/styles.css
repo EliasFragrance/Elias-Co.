@@ -186,7 +186,7 @@ a:hover{ opacity: .9; }
 .hero{
   padding: 90px 0 60px;
   position: relative;
-  min-height: 65vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
