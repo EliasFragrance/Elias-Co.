@@ -35,15 +35,11 @@ body{
   overflow-x: hidden;
 }
 
-body::before {
+.home::before {
   content: '';
   position: fixed;
   inset: 0;
-  background:
-    url("Elias-Co./assets/img/bg.png") center / cover no-repeat,
-    radial-gradient(1400px 800px at 20% 0%, rgba(54,69,79,0.06), transparent 65%),
-    radial-gradient(1000px 600px at 85% 25%, rgba(255,254,245,0.4), transparent 60%),
-    radial-gradient(800px 500px at 50% 80%, rgba(54,69,79,0.04), transparent 55%);
+  background: url("assets/img/bg.png") center / cover no-repeat;
   pointer-events: none;
   z-index: 0;
 }
