@@ -224,6 +224,9 @@ a:hover{ opacity: .9; }
   align-items: flex-end;
   gap: 10px;
 }
+.ai-chat-widget.is-open .ai-chat-toggle{
+  display: none;
+}
 .ai-chat-toggle{
   display: inline-flex;
   align-items: center;
