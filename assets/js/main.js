@@ -44,6 +44,12 @@
           { value: 'local-service', label: 'Local service', score: { foundation: 1 } },
           { value: 'ecom', label: 'eCom', score: { performance: 1 } },
           { value: 'restaurant', label: 'Restaurant', score: { foundation: 1 } },
+          { value: 'health', label: 'Health & wellness', score: { performance: 1 } },
+          { value: 'home-services', label: 'Home services', score: { foundation: 1 } },
+          { value: 'b2b', label: 'B2B / Professional services', score: { performance: 1 } },
+          { value: 'education', label: 'Education / Coaching', score: { performance: 1 } },
+          { value: 'hospitality', label: 'Hospitality / Events', score: { performance: 1 } },
+          { value: 'nonprofit', label: 'Nonprofit', score: { foundation: 1 } },
           { value: 'other', label: 'Other', score: { performance: 1 } }
         ]
       },
@@ -104,18 +110,6 @@
         ]
       },
       {
-        id: 'booking-blocker',
-        text: 'What stops you from adding a booking link?',
-        type: 'single',
-        condition: (answers) => !((answers.assets || []).includes('booking-link')),
-        options: [
-          { value: 'dont-know', label: 'Don’t know how', score: { foundation: 1 } },
-          { value: 'no-time', label: 'No time', score: { performance: 1 } },
-          { value: 'no-calls', label: 'Don’t want calls', score: { foundation: 1 } },
-          { value: 'not-ready', label: 'Not ready', score: { foundation: 1 } }
-        ]
-      },
-      {
         id: 'offer',
         text: 'What are you selling?',
         type: 'single',
@@ -135,27 +129,6 @@
           { value: '200-1k', label: '$200–$1k', score: { performance: 2 } },
           { value: '1k-5k', label: '$1k–$5k', score: { scale: 2 } },
           { value: '5k-plus', label: '$5k+', score: { scale: 3 } }
-        ]
-      },
-      {
-        id: 'posting',
-        text: 'How often do you post short-form video?',
-        type: 'single',
-        options: [
-          { value: 'never', label: 'Never', score: { foundation: 2 } },
-          { value: '1-2', label: '1–2x wk', score: { foundation: 1, performance: 1 } },
-          { value: '3-5', label: '3–5x wk', score: { performance: 2 } },
-          { value: 'daily', label: 'Daily', score: { scale: 2 } }
-        ]
-      },
-      {
-        id: 'repeatable',
-        text: 'Do you have a repeatable content format?',
-        type: 'single',
-        options: [
-          { value: 'no', label: 'No', score: { foundation: 1 } },
-          { value: 'somewhat', label: 'Somewhat', score: { performance: 1 } },
-          { value: 'yes', label: 'Yes', score: { scale: 1 } }
         ]
       },
       {
@@ -231,17 +204,6 @@
           '200-1k': 1,
           '1k-5k': 2,
           '5k-plus': 3
-        },
-        posting: {
-          never: 0,
-          '1-2': 1,
-          '3-5': 2,
-          daily: 3
-        },
-        repeatable: {
-          no: 0,
-          somewhat: 1,
-          yes: 2
         },
         'response-time': {
           no: 0,
