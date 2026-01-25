@@ -410,6 +410,14 @@
       setOpen(panel.hidden);
     });
 
+    panel.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    toggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
     if (close) {
       close.addEventListener('click', () => {
         setOpen(false);
