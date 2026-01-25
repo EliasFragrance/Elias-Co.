@@ -336,7 +336,7 @@
             `).join('')}
           </div>
           <div class="ai-chat-actions">
-            <button class="ai-chat-action secondary" type="button" data-quiz-back>Back</button>
+            ${state.index > 0 ? '<button class="ai-chat-action secondary" type="button" data-quiz-back>Back</button>' : ''}
             <button class="ai-chat-action" type="button" data-quiz-next>Continue</button>
           </div>
         `;
@@ -381,7 +381,7 @@
           `).join('')}
         </div>
         <div class="ai-chat-actions">
-          <button class="ai-chat-action secondary" type="button" data-quiz-back>Back</button>
+          ${state.index > 0 ? '<button class="ai-chat-action secondary" type="button" data-quiz-back>Back</button>' : ''}
         </div>
       `;
       body.scrollTop = 0;
