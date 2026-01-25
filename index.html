@@ -279,7 +279,7 @@
         suffixEl.textContent = suffixText.slice(0, nextIndex);
         if (nextIndex >= suffixText.length) {
           loopCount += 1;
-          if (loopCount >= 2) return;
+          if (loopCount >= 1) return;
           phase = 'hold-full';
           setTimeout(updateText, holdAfterFull);
           return;
