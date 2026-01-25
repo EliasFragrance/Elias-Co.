@@ -21,8 +21,9 @@
     const panel = widget.querySelector('.ai-chat-panel');
     const close = widget.querySelector('.ai-chat-close');
     const body = widget.querySelector('.ai-chat-body');
+    const header = widget.querySelector('.ai-chat-header');
 
-    if (!toggle || !panel || !body) return;
+    if (!toggle || !panel || !body || !header) return;
 
     const questions = [
       {
@@ -159,6 +160,38 @@
       answers: {}
     };
 
+    const progressWrap = panel.querySelector('.ai-chat-progress-wrap') || (() => {
+      const wrap = document.createElement('div');
+      wrap.className = 'ai-chat-progress-wrap';
+
+      const label = document.createElement('div');
+      label.className = 'ai-chat-progress';
+
+      const bar = document.createElement('div');
+      bar.className = 'ai-chat-progress-bar';
+
+      const fill = document.createElement('span');
+      bar.appendChild(fill);
+
+      wrap.append(label, bar);
+      header.insertAdjacentElement('afterend', wrap);
+      return wrap;
+    })();
+
+    const progressLabel = progressWrap.querySelector('.ai-chat-progress');
+    const progressFill = progressWrap.querySelector('.ai-chat-progress-bar span');
+
+    const updateProgress = (current, total, isComplete = false) => {
+      const percent = total > 0 ? Math.round((current / total) * 100) : 0;
+      if (progressLabel) {
+        progressLabel.textContent = isComplete ? 'Complete' : `Question ${current} of ${total}`;
+      }
+      if (progressFill) {
+        progressFill.style.width = `${percent}%`;
+      }
+      progressWrap.setAttribute('aria-hidden', String(total === 0));
+    };
+
     const setOpen = (isOpen) => {
       panel.hidden = !isOpen;
       widget.classList.toggle('is-open', isOpen);
@@ -275,6 +308,7 @@
           <a class="ai-chat-action secondary" href="contact.html">Book a call</a>
         </div>
       `;
+      updateProgress(1, 1, true);
       body.scrollTop = 0;
     };
 
@@ -286,16 +320,11 @@
       }
 
       const question = visible[state.index];
-      const progress = `${state.index + 1} of ${visible.length}`;
-      const progressPercent = Math.round(((state.index + 1) / visible.length) * 100);
       const helper = question.helper ? `<div class="ai-chat-helper">${question.helper}</div>` : '';
+      updateProgress(state.index + 1, visible.length);
 
       if (question.type === 'multi') {
         body.innerHTML = `
-          <div class="ai-chat-progress">Question ${progress}</div>
-          <div class="ai-chat-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progressPercent}">
-            <span style="width: ${progressPercent}%;"></span>
-          </div>
           <div class="ai-chat-message ai-chat-message--bot">${question.text}</div>
           ${helper}
           <div class="ai-chat-checkboxes">
@@ -342,10 +371,6 @@
       }
 
       body.innerHTML = `
-        <div class="ai-chat-progress">Question ${progress}</div>
-        <div class="ai-chat-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progressPercent}">
-          <span style="width: ${progressPercent}%;"></span>
-        </div>
         <div class="ai-chat-message ai-chat-message--bot">${question.text}</div>
         ${helper}
         <div class="ai-chat-options">
