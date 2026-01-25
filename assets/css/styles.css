@@ -220,18 +220,18 @@ a:hover{ opacity: .9; }
   gap: 8px;
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--cream);
+  border: 1px solid rgba(54,69,79,0.18);
+  background: linear-gradient(135deg, rgba(255,254,245,0.95), rgba(255,255,255,0.95));
   color: var(--text);
   font-weight: 600;
   font-size: 13px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 30px rgba(54,69,79,0.14);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .ai-chat-toggle:hover{
   transform: translateY(-1px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(54,69,79,0.18);
 }
 .ai-chat-dot{
   width: 8px;
@@ -242,19 +242,20 @@ a:hover{ opacity: .9; }
 }
 .ai-chat-panel{
   width: min(360px, 90vw);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(54,69,79,0.18);
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(54,69,79,0.18);
   overflow: hidden;
+  backdrop-filter: blur(14px);
 }
 .ai-chat-header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 14px;
-  background: var(--cream-2);
-  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(255,254,245,0.95), rgba(255,255,255,0.95));
+  border-bottom: 1px solid rgba(54,69,79,0.12);
 }
 .ai-chat-header-text{
   display: flex;
@@ -265,21 +266,23 @@ a:hover{ opacity: .9; }
 .ai-chat-close{
   border: none;
   background: transparent;
-  color: var(--muted);
+  color: var(--text);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 }
 .ai-chat-body{
-  padding: 14px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
 }
 .ai-chat-message{
   padding: 10px 12px;
   border-radius: 12px;
-  background: var(--cream-2);
+  background: rgba(255,254,245,0.9);
   color: var(--text);
   font-size: 13px;
   line-height: 1.5;
@@ -289,24 +292,56 @@ a:hover{ opacity: .9; }
   gap: 8px;
 }
 .ai-chat-option{
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fff;
+  border: 1px solid rgba(54,69,79,0.16);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff, rgba(255,255,255,0.9));
   color: var(--text);
   font-size: 13px;
-  padding: 10px 12px;
+  padding: 11px 12px;
   text-align: left;
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 .ai-chat-option:hover{
   border-color: var(--charcoal);
-  box-shadow: 0 6px 16px rgba(54,69,79,0.12);
+  box-shadow: 0 10px 20px rgba(54,69,79,0.12);
+  transform: translateY(-1px);
 }
 .ai-chat-result{
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.ai-chat-progress{
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.ai-chat-helper{
+  font-size: 12px;
+  color: var(--muted);
+}
+.ai-chat-checkboxes{
+  display: grid;
+  gap: 8px;
+}
+.ai-chat-checkbox{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(54,69,79,0.16);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff, rgba(255,255,255,0.9));
+  font-size: 13px;
+  cursor: pointer;
+}
+.ai-chat-checkbox input{
+  margin-top: 2px;
+}
+.ai-chat-checkbox span{
+  line-height: 1.4;
 }
 .ai-chat-actions{
   display: flex;
@@ -321,15 +356,15 @@ a:hover{ opacity: .9; }
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
-  border: 1px solid var(--charcoal);
-  background: var(--charcoal);
-  color: var(--cream);
+  border: 1px solid rgba(54,69,79,0.2);
+  background: linear-gradient(135deg, #2b3539, #36454f);
+  color: #fff;
   cursor: pointer;
 }
 .ai-chat-action.secondary{
   background: transparent;
   color: var(--charcoal);
-  border-color: var(--charcoal-light);
+  border-color: rgba(54,69,79,0.2);
 }
 .ai-chat-action.ghost{
   background: transparent;
