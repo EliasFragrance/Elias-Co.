@@ -166,6 +166,31 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </footer>
 
+<div class="ai-chat-widget" data-ai-chat>
+  <button class="ai-chat-toggle" type="button" aria-expanded="false" aria-controls="ai-chat-panel">
+    <span class="ai-chat-dot" aria-hidden="true"></span>
+    Chat with AI
+  </button>
+  <div class="ai-chat-panel" id="ai-chat-panel" role="dialog" aria-live="polite" hidden>
+    <div class="ai-chat-header">
+      <div class="ai-chat-header-text">
+        <strong>Find your best package</strong>
+        <span>60-second quiz</span>
+      </div>
+      <button class="ai-chat-close" type="button" aria-label="Close chat">x</button>
+    </div>
+    <div class="ai-chat-body">
+      <div class="ai-chat-message ai-chat-message--bot">Hi! What stage is your business in?</div>
+      <div class="ai-chat-options" data-quiz-options>
+        <button class="ai-chat-option" type="button" data-stage="starting">Just starting / pre-revenue</button>
+        <button class="ai-chat-option" type="button" data-stage="growing">Growing with steady sales</button>
+        <button class="ai-chat-option" type="button" data-stage="scaling">Scaling with strong demand</button>
+      </div>
+      <div class="ai-chat-result" data-quiz-result hidden></div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
