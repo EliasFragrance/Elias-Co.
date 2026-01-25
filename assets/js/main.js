@@ -296,11 +296,15 @@
 
       const question = visible[state.index];
       const progress = `${state.index + 1} of ${visible.length}`;
+      const progressPercent = Math.round(((state.index + 1) / visible.length) * 100);
       const helper = question.helper ? `<div class="ai-chat-helper">${question.helper}</div>` : '';
 
       if (question.type === 'multi') {
         body.innerHTML = `
           <div class="ai-chat-progress">Question ${progress}</div>
+          <div class="ai-chat-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progressPercent}">
+            <span style="width: ${progressPercent}%;"></span>
+          </div>
           <div class="ai-chat-message ai-chat-message--bot">${question.text}</div>
           ${helper}
           <div class="ai-chat-checkboxes">
@@ -347,6 +351,9 @@
 
       body.innerHTML = `
         <div class="ai-chat-progress">Question ${progress}</div>
+        <div class="ai-chat-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progressPercent}">
+          <span style="width: ${progressPercent}%;"></span>
+        </div>
         <div class="ai-chat-message ai-chat-message--bot">${question.text}</div>
         ${helper}
         <div class="ai-chat-options">
