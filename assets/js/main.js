@@ -275,6 +275,7 @@
           <a class="ai-chat-action secondary" href="contact.html">Book a call</a>
         </div>
       `;
+      body.scrollTop = 0;
     };
 
     const renderQuestion = () => {
@@ -310,6 +311,7 @@
             <button class="ai-chat-action" type="button" data-quiz-next>Continue</button>
           </div>
         `;
+        body.scrollTop = 0;
 
         const selected = new Set(state.answers[question.id] || []);
         body.querySelectorAll('input[type="checkbox"]').forEach(input => {
@@ -357,6 +359,7 @@
           <button class="ai-chat-action secondary" type="button" data-quiz-back>Back</button>
         </div>
       `;
+      body.scrollTop = 0;
 
       const back = body.querySelector('[data-quiz-back]');
       if (back) {
