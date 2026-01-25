@@ -71,6 +71,11 @@ a:hover{ opacity: .9; }
   background: var(--header-bg);
   border-bottom: 1px solid var(--border);
 }
+.header.is-scrolled{
+  background: transparent;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+}
 
 .nav{
   display:flex;
