@@ -129,17 +129,6 @@
         ]
       },
       {
-        id: 'offer',
-        text: 'What are you selling?',
-        type: 'single',
-        options: [
-          { value: 'clear-package', label: 'Clear package', score: { scale: 1 } },
-          { value: 'custom-quotes', label: 'Custom quotes', score: { performance: 1 } },
-          { value: 'dm-us', label: '“DM us”', score: { foundation: 1 } },
-          { value: 'not-sure', label: 'Not sure', score: { foundation: 1 } }
-        ]
-      },
-      {
         id: 'aov',
         text: 'What’s your average customer value?',
         type: 'single',
@@ -247,12 +236,6 @@
           no: 0,
           kinda: 1,
           yes: 2
-        },
-        offer: {
-          'dm-us': 0,
-          'not-sure': 0,
-          'custom-quotes': 1,
-          'clear-package': 2
         },
         aov: {
           'under-200': 0,
