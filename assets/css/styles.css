@@ -262,6 +262,7 @@ a:hover{ opacity: .9; }
 }
 .ai-chat-panel{
   width: min(360px, 90vw);
+  max-height: min(80vh, 560px);
   background: rgba(255,255,255,0.95);
   border: 1px solid rgba(54,69,79,0.18);
   border-radius: 18px;
