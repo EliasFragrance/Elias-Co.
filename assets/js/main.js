@@ -24,6 +24,7 @@
     link.style.setProperty('--nav-steps', String(Math.max(text.length, 4)));
   });
 
+
   document.querySelectorAll('[data-ai-chat]').forEach(widget => {
     const toggle = widget.querySelector('.ai-chat-toggle');
     const panel = widget.querySelector('.ai-chat-panel');
