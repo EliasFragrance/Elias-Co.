@@ -47,7 +47,7 @@
     <div class="container">
       <div class="hero-content">
         <h1 aria-label="Your creative team's creative team.">
-          Your creative team<span class="typing" data-typing-target></span>
+          <span data-typing-base></span><span data-typing-suffix></span>
         </h1>
         <p class="hero-description">
           We help startups and brands get more exposure through different social media channels.
@@ -214,21 +214,78 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const typingTarget = document.querySelector('[data-typing-target]');
-    if (!typingTarget) return;
+    const baseEl = document.querySelector('[data-typing-base]');
+    const suffixEl = document.querySelector('[data-typing-suffix]');
+    if (!baseEl || !suffixEl) return;
 
-    const text = "'s creative team.";
+    const baseText = 'Your creative team';
+    const suffixText = "'s creative team.";
+    const fullText = `${baseText}${suffixText}`;
+    const typeSpeed = 70;
+    const deleteSpeed = 45;
+    const holdAfterFull = 900;
+    const holdAfterDelete = 450;
+
     let index = 0;
-    typingTarget.textContent = '';
+    let phase = 'typing-full';
 
-    const typeNext = () => {
-      if (index >= text.length) return;
-      typingTarget.textContent += text[index];
-      index += 1;
-      setTimeout(typeNext, 70);
+    baseEl.textContent = '';
+    suffixEl.textContent = '';
+
+    const updateText = () => {
+      if (phase === 'typing-full') {
+        const nextIndex = index + 1;
+        const current = fullText.slice(0, nextIndex);
+        baseEl.textContent = current.slice(0, baseText.length);
+        suffixEl.textContent = current.slice(baseText.length);
+        index = nextIndex;
+
+        if (index >= fullText.length) {
+          phase = 'hold-full';
+          setTimeout(updateText, holdAfterFull);
+          return;
+        }
+        setTimeout(updateText, typeSpeed);
+        return;
+      }
+
+      if (phase === 'hold-full') {
+        phase = 'deleting-suffix';
+        setTimeout(updateText, deleteSpeed);
+        return;
+      }
+
+      if (phase === 'deleting-suffix') {
+        const suffixIndex = Math.max(0, suffixEl.textContent.length - 1);
+        suffixEl.textContent = suffixText.slice(0, suffixIndex);
+        if (suffixIndex === 0) {
+          phase = 'hold-empty';
+          setTimeout(updateText, holdAfterDelete);
+          return;
+        }
+        setTimeout(updateText, deleteSpeed);
+        return;
+      }
+
+      if (phase === 'hold-empty') {
+        phase = 'typing-suffix';
+        setTimeout(updateText, typeSpeed);
+        return;
+      }
+
+      if (phase === 'typing-suffix') {
+        const nextIndex = suffixEl.textContent.length + 1;
+        suffixEl.textContent = suffixText.slice(0, nextIndex);
+        if (nextIndex >= suffixText.length) {
+          phase = 'hold-full';
+          setTimeout(updateText, holdAfterFull);
+          return;
+        }
+        setTimeout(updateText, typeSpeed);
+      }
     };
 
-    typeNext();
+    updateText();
   });
 </script>
 
