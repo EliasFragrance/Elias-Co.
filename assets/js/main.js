@@ -16,6 +16,14 @@
     if (href === path) a.setAttribute('aria-current', 'page');
   });
 
+  // Prep nav text for hover "retype" animation
+  document.querySelectorAll('.navlinks a').forEach(link => {
+    const text = (link.textContent || '').trim();
+    if (!text) return;
+    link.setAttribute('data-text', text);
+    link.style.setProperty('--nav-steps', String(Math.max(text.length, 4)));
+  });
+
   document.querySelectorAll('[data-ai-chat]').forEach(widget => {
     const toggle = widget.querySelector('.ai-chat-toggle');
     const panel = widget.querySelector('.ai-chat-panel');
